@@ -9,7 +9,11 @@
   "keywords": [
     "odata"
   ],
-  "license": "Apache 2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/code-vicar/Flowdata.git"
+  },
+  "license": "Apache-2.0",
   "ignore": [
     "**/.*",
     "node_modules",

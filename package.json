@@ -4,7 +4,7 @@
   "description": "A simple javascript client for easy composition of OData queries",
   "main": "src/index.js",
   "author": "Scott Vickers",
-  "license": "Apache 2",
+  "license": "Apache-2.0",
   "devDependencies": {
     "browserify": "^8.1.0",
     "gulp": "^3.8.10",
