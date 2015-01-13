@@ -1,0 +1,21 @@
+{
+  "name": "Flowdata",
+  "version": "0.1.0",
+  "authors": [
+    "Scott Vickers <scott.w.vickers@gmail.com>"
+  ],
+  "main": "dist/flowdata-0.1.0.js",
+  "description": "A simple javascript client for easy composition of OData queries",
+  "keywords": [
+    "odata"
+  ],
+  "license": "Apache 2",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "src",
+    "out"
+  ]
+}

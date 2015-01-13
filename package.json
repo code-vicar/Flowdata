@@ -1,0 +1,17 @@
+{
+  "name": "Flowdata",
+  "version": "0.1.0",
+  "description": "A simple javascript client for easy composition of OData queries",
+  "main": "src/index.js",
+  "author": "Scott Vickers",
+  "license": "Apache 2",
+  "devDependencies": {
+    "browserify": "^8.1.0",
+    "gulp": "^3.8.10",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.0.0"
+  },
+  "dependencies": {
+    "underscore": "^1.7.0"
+  }
+}
