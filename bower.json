@@ -1,10 +1,10 @@
 {
   "name": "flowdata",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "authors": [
     "Scott Vickers <scott.w.vickers@gmail.com>"
   ],
-  "main": "dist/flowdata-0.1.0.js",
+  "main": "dist/flowdata-0.1.1.js",
   "description": "A simple javascript client for easy composition of OData queries",
   "keywords": [
     "odata"
