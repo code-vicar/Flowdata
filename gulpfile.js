@@ -15,7 +15,7 @@ var getBundleName = function () {
 gulp.task('dist', function () {
   var bundler = browserify({
     entries: ['./src/index.js'],
-    standalone: 'Sunglass',
+    standalone: 'flowdata',
     debug: true
   });
 
