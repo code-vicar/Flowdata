@@ -8,8 +8,8 @@
 (function () {
   'use strict';
 
-  var Inheritable = require.main.require('mixins/inheritable.js');
-  var Queryable = require.main.require('mixins/queryable');
+  var Inheritable = _rootRequire('mixins/inheritable.js');
+  var Queryable = _rootRequire('mixins/queryable.js');
   var _ = require('lodash');
 
   /**
@@ -22,7 +22,7 @@
   var Resource = function Resource() {};
 
   _.mixin(Resource, Inheritable);
-  _.mixin(Resource, Queryable);
+  _.mixin(Resource.prototype, Queryable);
 
   module.exports = Resource;
 })();
