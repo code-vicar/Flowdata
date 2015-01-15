@@ -1,19 +1,28 @@
 /**
-* Resource module
-* @module sunglass/resource
-* @requires module:sunglass/mixins/inheritable
-*/
+ * Resource module
+ * @module sunglass/resource
+ * @requires module:sunglass/mixins/inheritable
+ * @requires module:sunglass/mixins/queryable
+ */
 
-var Inheritable = require('../mixins/inheritable.js');
-var _ = require('underscore');
+(function () {
+  'use strict';
 
-/**
-  @class
-  @mixes Inheritable
-  @see {@link module:sunglass/mixins/inheritable~Inheritable}
-*/
-var Resource = function Resource() {};
+  var Inheritable = require.main.require('mixins/inheritable.js');
+  var Queryable = require.main.require('mixins/queryable');
+  var _ = require('lodash');
 
-_.extend(Resource, Inheritable);
+  /**
+    @class
+    @mixes Inheritable
+    @see {@link module:sunglass/mixins/inheritable~Inheritable}
+    @mixes Queryable
+    @see {@link module:sunglass/mixins/queryable~Queryable}
+  */
+  var Resource = function Resource() {};
 
-module.exports = Resource;
+  _.mixin(Resource, Inheritable);
+  _.mixin(Resource, Queryable);
+
+  module.exports = Resource;
+})();
