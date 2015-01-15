@@ -83,5 +83,7 @@
   "yui"           : false,    // Yahoo User Interface
 
   // Custom Globals
-  "globals"       : { }
+  "globals"       : {
+    "_rootRequire": true
+  }
 }

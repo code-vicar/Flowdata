@@ -9,6 +9,7 @@
   var Inheritable = require('./mixins/inheritable.js');
   var Queryable = require('./mixins/queryable.js');
   var unique = require('./utils/unique.js');
+  var forEachOwnKey = require('./utils/forEachOwnKey.js');
 
   exports.Resource = Resource;
   exports.Mixins = {
@@ -16,6 +17,7 @@
     Queryable: Queryable
   };
   exports.Utils = {
-    unique: unique
+    unique: unique,
+    forEachOwnKey: forEachOwnKey
   };
 })();
