@@ -11,6 +11,7 @@
   var unique = require('./utils/unique.js');
   var forEachOwnKey = require('./utils/forEachOwnKey.js');
   var mix = require('./utils/mix.js');
+  var Enumerable = require('./enums/Enumerable');
 
   exports.Resource = Resource;
   exports.Mixins = {
@@ -21,5 +22,8 @@
     unique: unique,
     forEachOwnKey: forEachOwnKey,
     mix: mix
+  };
+  exports.Enums = {
+    Enumerable: Enumerable
   };
 })();

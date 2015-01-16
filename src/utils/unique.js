@@ -1,6 +1,6 @@
 /**
  * Unique module
- * @module sunglass/utils/unique
+ * @module flowdata/utils/unique
  */
 
 (function () {

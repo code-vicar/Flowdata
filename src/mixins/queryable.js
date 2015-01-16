@@ -1,6 +1,8 @@
 /**
  * Queryable module
- * @module sunglass/mixins/queryable
+ * @module flowdata/mixins/queryable
+ * @requires module:flowdata/utils/unique
+ * @requires module:flowdata/resource
  */
 
 (function () {
@@ -8,6 +10,7 @@
 
   var _ = require('lodash');
   var unique = _rootRequire('utils/unique.js');
+  var Resource = _rootRequire('resource/resource.js');
 
   var isNullOrUndefined = function isNullOrUndefined(value) {
     return (_.isNull(value) || _.isUndefined(value));
@@ -34,7 +37,7 @@
 
   /**
    * Mixin for adding inheritance to classes
-   * @mixin
+   * @mixin Queryable
    */
   var Queryable = {
     class: {
@@ -44,7 +47,25 @@
       where: function where(clause) {
         initialize.call(this);
         console.log(clause);
+        return this;
+      },
 
+      expand: function expand(resource) {
+        initialize.call(this);
+        if (!(resource instanceof Resource)) {
+          throw new TypeError('Expected an instance of Resource');
+        }
+
+        this.queryable.expand = this.queryable.expand || [];
+
+        var i = 0, len = this.queryable.expand.length;
+        for (i = 0; i < len; i++) {
+          if (this.queryable.expand[i].name === resource.name) {
+            throw new Error('Already expanded on that property');
+          }
+        }
+
+        this.queryable.expand.push(resource);
         return this;
       },
 
@@ -74,17 +95,26 @@
         }
 
         this.queryable.select = unique(this.queryable.select.concat(members));
-
         return this;
       },
 
-      top: function top() {
+      top: function top(number) {
         initialize.call(this);
+        if (typeof number !== 'number' || isNaN(number) || number < 0) {
+          throw new TypeError('Expected a positive integer');
+        }
+
+        this.queryable.top = number;
         return this;
       },
 
-      skip: function skip() {
+      skip: function skip(number) {
         initialize.call(this);
+        if (typeof number !== 'number' || isNaN(number) || number < 0) {
+          throw new TypeError('Expected a positive integer');
+        }
+
+        this.queryable.skip = number;
         return this;
       }
     }

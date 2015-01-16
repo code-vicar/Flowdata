@@ -1,6 +1,7 @@
 /**
  * Inheritable module
- * @module sunglass/mixins/inheritable
+ * @module flowdata/mixins/inheritable
+ * @requires module:flowdata/utils/forEachOwnKey
  */
 
 (function () {

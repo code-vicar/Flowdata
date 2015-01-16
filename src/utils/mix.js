@@ -1,6 +1,7 @@
 /**
  * Unique module
- * @module sunglass/utils/mix
+ * @module flowdata/utils/mix
+ * @requires module:flowdata/utils/forEachOwnKey
  */
 
 (function () {

@@ -1,6 +1,6 @@
 /**
  * Unique module
- * @module sunglass/utils/forEachOwnProperty
+ * @module flowdata/utils/forEachOwnProperty
  */
 
 (function () {
