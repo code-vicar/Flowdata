@@ -10,6 +10,7 @@
   var Queryable = require('./mixins/queryable.js');
   var unique = require('./utils/unique.js');
   var forEachOwnKey = require('./utils/forEachOwnKey.js');
+  var mix = require('./utils/mix.js');
 
   exports.Resource = Resource;
   exports.Mixins = {
@@ -18,6 +19,7 @@
   };
   exports.Utils = {
     unique: unique,
-    forEachOwnKey: forEachOwnKey
+    forEachOwnKey: forEachOwnKey,
+    mix: mix
   };
 })();

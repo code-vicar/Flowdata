@@ -37,51 +37,56 @@
    * @mixin
    */
   var Queryable = {
-    where: function where(clause) {
-      initialize.call(this);
-      console.log(clause);
+    class: {
 
-      return this;
     },
+    proto: {
+      where: function where(clause) {
+        initialize.call(this);
+        console.log(clause);
 
-    order: function order(member, dir) {
-      initialize.call(this);
+        return this;
+      },
 
-      var sortDirection = getSortDirection(dir) || 'asc';
+      order: function order(member, dir) {
+        initialize.call(this);
 
-      this.queryable.order = {
-        member: member,
-        sortDirection: sortDirection
-      };
+        var sortDirection = getSortDirection(dir) || 'asc';
 
-      return this;
-    },
+        this.queryable.order = {
+          member: member,
+          sortDirection: sortDirection
+        };
 
-    select: function select(members) {
-      initialize.call(this);
-      this.queryable.select = this.queryable.select || [];
+        return this;
+      },
 
-      if (isNullOrUndefined(members)) {
+      select: function select(members) {
+        initialize.call(this);
+        this.queryable.select = this.queryable.select || [];
+
+        if (isNullOrUndefined(members)) {
+          return this;
+        }
+
+        if (!_.isArray(members)) {
+          members = [members];
+        }
+
+        this.queryable.select = unique(this.queryable.select.concat(members));
+
+        return this;
+      },
+
+      top: function top() {
+        initialize.call(this);
+        return this;
+      },
+
+      skip: function skip() {
+        initialize.call(this);
         return this;
       }
-
-      if (!_.isArray(members)) {
-        members = [members];
-      }
-
-      this.queryable.select = unique(this.queryable.select.concat(members));
-
-      return this;
-    },
-
-    top: function top() {
-      initialize.call(this);
-      return this;
-    },
-
-    skip: function skip() {
-      initialize.call(this);
-      return this;
     }
   };
 

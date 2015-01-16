@@ -10,7 +10,7 @@
 
   var Inheritable = _rootRequire('mixins/inheritable.js');
   var Queryable = _rootRequire('mixins/queryable.js');
-  var forEachOwnKey = _rootRequire('utils/forEachOwnKey.js');
+  var mix = _rootRequire('utils/mix.js');
 
   /**
     @class
@@ -20,13 +20,9 @@
     @see {@link module:sunglass/mixins/queryable~Queryable}
   */
   var Resource = function Resource() {};
-  forEachOwnKey(Inheritable, function (key) {
-    Resource[key] = Inheritable[key];
-  });
 
-  forEachOwnKey(Queryable, function (key) {
-    Resource.prototype[key] = Queryable[key];
-  });
+  Resource = mix(Resource, Inheritable);
+  Resource = mix(Resource, Queryable);
 
   module.exports = Resource;
 })();
