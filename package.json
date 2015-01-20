@@ -16,6 +16,7 @@
     "url": "https://github.com/code-vicar/Flowdata.git"
   },
   "dependencies": {
+    "bluebird": "^2.8.1",
     "lodash": "^2.4.1"
   }
 }

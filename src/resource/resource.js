@@ -9,8 +9,6 @@
 (function () {
   'use strict';
 
-
-
   /**
    * Represents an odata resource
    * @class
@@ -21,16 +19,26 @@
    * @param {string} name The name of the resource as it appears in the odata service
    */
   var Resource = function Resource(name) {
+    var args = arguments;
+    var self = this;
+
     if (typeof name !== 'string' || name.length <= 0) {
       throw new TypeError('Expected a non empty string');
     }
     this.name = name;
+
+    // exec mixin initializations
+    if (this.init) {
+      this.init.forEach(function (init) {
+        init.apply(self, args);
+      });
+    }
   };
 
   module.exports = Resource;
 
   var Inheritable = _rootRequire('mixins/inheritable.js');
-  var Queryable = _rootRequire('mixins/queryable.js');
+  var Queryable = _rootRequire('mixins/queryable');
   var mix = _rootRequire('utils/mix.js');
 
   Resource = mix(Resource, Inheritable);

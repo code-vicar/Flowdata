@@ -11,15 +11,29 @@
   var forEachOwnKey = _rootRequire('utils/forEachOwnKey.js');
 
   function mix(target, mixin) {
-    if (!_.isPlainObject(mixin) || !_.isPlainObject(mixin.class) || !_.isPlainObject(mixin.proto)) {
-      throw new TypeError('Expected mixin to be an object with "class" and "proto" properties');
+    if (!_.isObject(target)) {
+      throw new TypeError('Expected target to be an object');
     }
-    forEachOwnKey(mixin.class, function (key) {
-      target[key] = mixin.class[key];
-    });
-    forEachOwnKey(mixin.proto, function (key) {
-      target.prototype[key] = mixin.proto[key];
-    });
+    if (!_.isPlainObject(mixin)) {
+      throw new TypeError('Expected mixin to be an object');
+    }
+
+    if (_.isFunction(mixin.init)) {
+      target.prototype.init = target.prototype.init || [];
+      target.prototype.init.push(mixin.init);
+    }
+
+    if (_.isPlainObject(mixin.class)) {
+      forEachOwnKey(mixin.class, function (key) {
+        target[key] = mixin.class[key];
+      });
+    }
+
+    if (_.isPlainObject(mixin.proto)) {
+      forEachOwnKey(mixin.proto, function (key) {
+        target.prototype[key] = mixin.proto[key];
+      });
+    }
 
     return target;
   }
