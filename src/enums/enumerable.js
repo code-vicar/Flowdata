@@ -8,8 +8,8 @@
 (function () {
   'use strict';
 
-  var Inheritable = _rootRequire('mixins/inheritable.js');
-  var mix = _rootRequire('utils/mix.js');
+  var Inheritable = _flowdata('mixins/inheritable.js');
+  var mix = _flowdata('utils/mix.js');
 
   /**
    * @class An enum

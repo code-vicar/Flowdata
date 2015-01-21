@@ -2,7 +2,7 @@
   'use strict';
 
   var _ = require('lodash');
-  var unique = _rootRequire('utils/unique.js');
+  var unique = _flowdata('utils/unique.js');
 
   var isNullOrUndefined = function isNullOrUndefined(value) {
     return (_.isNull(value) || _.isUndefined(value));

@@ -37,9 +37,9 @@
 
   module.exports = Resource;
 
-  var Inheritable = _rootRequire('mixins/inheritable.js');
-  var Queryable = _rootRequire('mixins/queryable');
-  var mix = _rootRequire('utils/mix.js');
+  var Inheritable = _flowdata('mixins/inheritable.js');
+  var Queryable = _flowdata('mixins/queryable');
+  var mix = _flowdata('utils/mix.js');
 
   Resource = mix(Resource, Inheritable);
   Resource = mix(Resource, Queryable);

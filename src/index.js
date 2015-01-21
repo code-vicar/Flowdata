@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  global._rootRequire = function(module) {
+  global._flowdata = function(module) {
     return require('./' + module);
   };
 

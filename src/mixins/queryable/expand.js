@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  var Resource = _rootRequire('resource/resource.js');
+  var Resource = _flowdata('resource/resource.js');
 
   module.exports = function expand(resource) {
     if (!(resource instanceof Resource)) {

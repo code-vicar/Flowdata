@@ -8,7 +8,7 @@
   'use strict';
 
   var _ = require('lodash');
-  var forEachOwnKey = _rootRequire('utils/forEachOwnKey.js');
+  var forEachOwnKey = _flowdata('utils/forEachOwnKey.js');
 
   /**
    * Mixin for adding inheritance to classes
