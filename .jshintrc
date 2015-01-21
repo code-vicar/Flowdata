@@ -84,6 +84,6 @@
 
   // Custom Globals
   "globals"       : {
-    "_rootRequire": true
+    "_flowdata": true
   }
 }

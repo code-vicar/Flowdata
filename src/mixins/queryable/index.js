@@ -15,7 +15,7 @@
   var select = require('./select.js');
   var skip = require('./skip.js');
   var top = require('./top.js');
-  var where = require('./where');
+  var where = require('./where.js');
 
   var isNullOrUndefined = function isNullOrUndefined(value) {
     return (_.isNull(value) || _.isUndefined(value));

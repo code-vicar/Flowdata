@@ -41,6 +41,6 @@
   var Queryable = _flowdata('mixins/queryable');
   var mix = _flowdata('utils/mix.js');
 
-  Resource = mix(Resource, Inheritable);
-  Resource = mix(Resource, Queryable);
+  mix(Resource, Inheritable);
+  mix(Resource, Queryable);
 })();
