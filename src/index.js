@@ -13,17 +13,21 @@
   var mix = require('./utils/mix.js');
   var Enumerable = require('./enums/enumerable.js');
 
-  exports.Resource = Resource;
-  exports.Mixins = {
+  var Flowdata = require('./flowdata.js');
+
+  Flowdata.Resource = Resource;
+  Flowdata.Mixins = {
     Inheritable: Inheritable,
     Queryable: Queryable
   };
-  exports.Utils = {
+  Flowdata.Utils = {
     unique: unique,
     forEachOwnKey: forEachOwnKey,
     mix: mix
   };
-  exports.Enums = {
+  Flowdata.Enums = {
     Enumerable: Enumerable
   };
+
+  module.exports = Flowdata;
 })();
