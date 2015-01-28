@@ -2,6 +2,12 @@
   'use strict';
 
   var odatajs = require('odatajs').oData;
+  if (window) {
+    odatajs = window.odatajs.oData;
+  } else {
+    odatajs = require('odatajs').oData;
+  }
+
   var Promise = require('bluebird');
 
   var logging = _flowdata('utils/logging.js');
