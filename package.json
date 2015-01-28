@@ -1,6 +1,6 @@
 {
   "name": "flowdata",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "A simple javascript client for easy composition of OData queries",
   "main": "src/index.js",
   "author": "Scott Vickers",
