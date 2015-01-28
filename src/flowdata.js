@@ -4,7 +4,7 @@
   var odatajs = require('odatajs').oData;
   var Promise = require('bluebird');
 
-  var logging = _flowdata('utils/logging');
+  var logging = _flowdata('utils/logging.js');
 
   var Flowdata = function Flowdata(serviceUrl) {
     var flowdata = this;
