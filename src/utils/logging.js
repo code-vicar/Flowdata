@@ -34,7 +34,7 @@
 
         args.unshift(prepend);
 
-        console.log.apply(console.log, args);
+        console.log.apply(console, args);
       }
     };
   };
