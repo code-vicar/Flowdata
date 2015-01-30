@@ -34,16 +34,28 @@
   };
 
   var Flowdata = function Flowdata(serviceUrl, metadata) {
-    this.serviceUrl = serviceUrl;
-    this.metadata = metadata;
+    var flowdata = this;
+
+    flowdata.serviceUrl = serviceUrl;
+    flowdata.metadata = metadata;
+    flowdata.version = metadata.version;
+
+    flowdata.db = {};
+
+    var schemas = metadata.dataServices.schema;
+
+    schemas.forEach(function (schema) {
+      schema.entityType.forEach(function (entityType) {
+        flowdata.db[schema.namespace] = flowdata.db[schema.namespace] || {};
+        flowdata.db[schema.namespace][entityType.name] = flowdata.db[schema.namespace][entityType.name] || {};
+        entityType.property.forEach(function (property) {
+          flowdata.db[schema.namespace][entityType.name][property.name] = undefined;
+        });
+      });
+    });
   };
 
   Flowdata.prototype.retrieveMetadata = retrieveMetadata;
-
-  Flowdata.prototype.generateModels = function generateModels() {
-    var logger = logging.getContext('Flowdata.generateModels');
-    logger.debug('Generating models');
-  };
 
   module.exports = {
     init: function (options) {
