@@ -26,7 +26,7 @@
     "odatajs": "git+https://github.com/code-vicar/olingo-odata4-js.git"
   },
   "scripts": {
-    "mocha": "node_modules/.bin/mocha test/tests.js",
+    "mocha": "node_modules/.bin/mocha",
     "phantom": "mochify --web-security=false --phantomjs=node_modules/phantomjs/lib/phantom/bin/phantomjs -R spec",
     "test": "npm run mocha && npm run phantom"
   }
