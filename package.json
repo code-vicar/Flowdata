@@ -8,6 +8,9 @@
   "devDependencies": {
     "browserify": "^8.1.0",
     "gulp": "^3.8.10",
+    "mocha": "^2.1.0",
+    "mochify": "^2.2.0",
+    "phantomjs": "^1.9.15",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.0.0"
   },
@@ -17,8 +20,14 @@
   },
   "dependencies": {
     "bluebird": "^2.8.1",
+    "chalk": "^0.5.1",
     "lodash": "^2.4.1",
     "moment": "^2.9.0",
     "odatajs": "git+https://github.com/code-vicar/olingo-odata4-js.git"
+  },
+  "scripts": {
+    "mocha": "node_modules/.bin/mocha test/tests.js",
+    "phantom": "mochify --web-security=false --phantomjs=node_modules/phantomjs/lib/phantom/bin/phantomjs -R spec",
+    "test": "npm run mocha && npm run phantom"
   }
 }

@@ -2,6 +2,7 @@
   'use strict';
 
   var moment = require('moment');
+  var chalk = require('chalk');
 
   /**
    * in order of increasing verbosity
@@ -9,19 +10,23 @@
   var logLevels = {
     'error': {
       verbosity: 0,
-      label: '[ERROR]'
+      label: '[ERROR]',
+      color: chalk.black.bgRed
     },
     'warn': {
       verbosity: 1,
-      label: '[WARN]'
+      label: '[WARN]',
+      color: chalk.black.bgYellow
     },
     'info': {
       verbosity: 2,
-      label: '[INFO]'
+      label: '[INFO]',
+      color: chalk.blue
     },
     'debug': {
       verbosity: 3,
-      label: '[DEBUG]'
+      label: '[DEBUG]',
+      color: chalk.green
     }
   };
 
@@ -30,9 +35,19 @@
       if (logging.enabledContexts[context] === true && logLevel.verbosity <= logging.logLevel.verbosity) {
         var args = Array.prototype.slice.call(arguments, 0);
 
-        var prepend = logLevel.label + '::' + context + '@' + moment().format(logging.timeStampFormat);
+        var prepend = logLevel.label + '::' + context + '@' + moment().format(logging.timeStampFormat) + '-';
 
         args.unshift(prepend);
+
+        var i = 0,
+          len = args.length,
+          arg;
+        for (i = 0; i < len; i++) {
+          arg = args[i];
+          if (typeof arg === 'string') {
+            args[i] = logLevel.color(arg);
+          }
+        }
 
         console.log.apply(console, args);
       }
@@ -94,6 +109,8 @@
 
     return this.loggers[ctx];
   };
+
+  Logging.prototype.chalk = chalk;
 
   var logging = new Logging();
 

@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  global._flowdata = function(module) {
+  global._flowdata = function (module) {
     return require('./' + module);
   };
 
@@ -18,7 +18,6 @@
   var Enumerable = require('./enums/enumerable.js');
 
   var Flowdata = require('./flowdata.js');
-
 
   Flowdata.Resource = Resource;
   Flowdata.Mixins = {
