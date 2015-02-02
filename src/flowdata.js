@@ -14,7 +14,7 @@
 
   var retrieveMetadata = function retrieveMetadata(serviceUrl) {
     return new Promise(function (resolve, reject) {
-      var metadataUrl = serviceUrl + '/$metadata';
+      var metadataUrl = serviceUrl + '/%24metadata';
 
       var logger = logging.getContext('Flowdata');
       logger.debug('Fetching metadata');
