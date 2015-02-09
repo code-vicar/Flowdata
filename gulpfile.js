@@ -8,15 +8,16 @@ var source = require('vinyl-source-stream');
 gulp.task('dist', function () {
   'use strict';
   var bundler = browserify({
-    entries: ['./src/index.js'],
+    entries: ['./index.js'],
     standalone: 'flowdata',
+    basedir: __dirname,
     debug: true
   });
 
-  var bundle = function() {
+  var bundle = function () {
     return bundler
       .bundle()
-      .pipe(source(packageName+'.js'))
+      .pipe(source(packageName + '.js'))
       .pipe(gulp.dest('./dist/'));
   };
 

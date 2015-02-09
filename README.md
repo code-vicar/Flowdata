@@ -32,11 +32,3 @@ In the browser a global 'flowdata' object will be created
     }).catch(function(err) {
       console.dir(err);
     });
-
-When used in the browser this library will output 3 globals.
-
-flowdata - the library itself.
-
-_flowdata - a function used internally to provide a root require shortcut
-
-odatajs - the olingo odata v4 client library, which flowdata depends on.
