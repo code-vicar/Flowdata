@@ -23,7 +23,7 @@ In the browser a global 'flowdata' object will be created
     var serviceUrl = 'http://services.odata.org/V4/(S(xloriihm0m3y04qekvvc3xg3))/TripPinServiceRW';
 
     // optionally set a logLevel
-    flowdata.Utils.logging.logLevel = flowdata.Utils.logging.logLevels.debug;
+    flowdata.logging.logLevel = flowdata.logging.logLevels.debug;
 
     // initiate a new OData service
     flowdata.init(serviceUrl).then(function (service) {
