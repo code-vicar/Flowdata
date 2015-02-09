@@ -73,4 +73,15 @@
       });
     });
   });
+
+  describe('logging facility', function () {
+    it('expose logging property', function () {
+      assert.strictEqual(typeof flowdata.logging, 'object');
+    });
+
+    it('can change log level', function () {
+      flowdata.logging.logLevel = flowdata.logging.logLevels.debug;
+      assert.equal(flowdata.logging.logLevel, flowdata.logging.logLevels.debug);
+    });
+  });
 })();
