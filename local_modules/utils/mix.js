@@ -8,7 +8,7 @@
   'use strict';
 
   var _ = require('lodash');
-  var forEachOwnKey = _flowdata('utils/forEachOwnKey.js');
+  var forEachOwnKey = require('./forEachOwnKey.js');
 
   function mix(target, mixin) {
     if (!_.isObject(target)) {

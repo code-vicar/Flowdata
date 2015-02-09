@@ -2,7 +2,7 @@
   'use strict';
   /* global describe */
   /* global it */
-  var flowdata = require('../src/index.js');
+  var flowdata = require('../');
   var assert = require('assert');
 
   describe('Create a new service', function () {
