@@ -2,7 +2,7 @@
   'use strict';
 
   var _ = require('lodash');
-  var forEachOwnKey = require('flowdata_utils').forEachOwnKey;
+  var forEachOwnKey = require('@/local_modules/utils').forEachOwnKey;
 
   var Inheritable = {
     class: {

@@ -1,8 +1,0 @@
-{
-  "name": "flowdata_resource",
-  "version": "1.0.0",
-  "description": "Resource class for flowdata",
-  "main": "resource.js",
-  "author": "Scott Vickers",
-  "license": "Apache-2.0"
-}

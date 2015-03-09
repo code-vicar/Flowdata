@@ -1,8 +1,0 @@
-{
-  "name": "flowdata_utils",
-  "version": "1.0.0",
-  "description": "Shared utilities for flowdata",
-  "main": "index.js",
-  "author": "Scott Vickers",
-  "license": "Apache-2.0"
-}

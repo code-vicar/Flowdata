@@ -1,8 +1,0 @@
-{
-  "name": "flowdata_logging",
-  "version": "1.0.0",
-  "description": "Logging for flowdata",
-  "main": "logging.js",
-  "author": "Scott Vickers",
-  "license": "Apache-2.0"
-}

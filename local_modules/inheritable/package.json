@@ -1,8 +1,0 @@
-{
-  "name": "flowdata_inheritable",
-  "version": "1.0.0",
-  "description": "Inheritance for flowdata",
-  "main": "inheritable.js",
-  "author": "Scott Vickers",
-  "license": "Apache-2.0"
-}

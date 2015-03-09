@@ -24,10 +24,7 @@
     "commander": "^2.6.0",
     "lodash": "^2.4.1",
     "moment": "^2.9.0",
-    "odatajs": "git+https://github.com/code-vicar/olingo-odata4-js.git",
-    "flowdata_logging": "file:./local_modules/logging",
-    "flowdata_utils": "file:./local_modules/utils",
-    "flowdata_inheritable": "file:./local_modules/inheritable"
+    "odatajs": "git+https://github.com/code-vicar/olingo-odata4-js.git"
   },
   "scripts": {
     "mocha": "node_modules/.bin/mocha",
